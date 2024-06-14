@@ -1,0 +1,640 @@
+@use "../utils"  as *;
+
+.HV_Section{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    
+    .system_container{
+
+        .window{
+
+            
+            .window-body{
+                .occupation{
+                font-family: "Pixelated MS Sans Serif", Ubuntu-Medium;
+                text-align: center;
+                -webkit-animation: focus-in-expand-fwd 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+                animation: focus-in-expand-fwd 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+                }
+                .admindevices_paragraf{
+                  font-family: "Pixelated MS Sans Serif", Ubuntu-Medium;
+                  text-align: center;
+                  font-size: medium;
+                }
+                .graphics{
+                  margin-top: 1em;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  gap:5px;
+                }
+                .general_sections{
+                    display: grid; 
+                    grid-template-columns: 30% 70%; 
+                    grid-template-rows: 1fr; 
+                    gap: 1px 0px; 
+                    grid-template-areas: 
+                        "logo_area about_area"; 
+                        .logo_area {
+                             grid-area: logo_area; 
+                             display: flex;
+                             flex-direction: column;
+                             align-items: center;
+                             gap:1em;
+                             #curvedarrow {
+                                position: relative;
+                                width: 0;
+                                top: -1em;
+                                left: 9em;
+                                height: 0;
+                                transform: rotate(-85deg);
+                                width: 0;
+                                height: 0;
+                                border-top: 2em solid;
+                                border-left: 2em solid transparent;
+                              }
+                              #curvedarrow:after {
+                                content: "";
+                                position: absolute;
+                                border: 0 solid transparent;
+                                border-top: 7px solid $negro-claro;
+                                border-radius: 20px 0 0 0;
+                                top: -10px;
+                                left: -27px;
+                                width: 25px;
+                                height: 18px;
+                                transform: rotate(-40deg);
+                              }
+                              #power_button{
+                                content: "";
+                                display: block;
+                                width: 8px;
+                                position: absolute;
+                                height: 8px;
+                                top: 8.2em;
+                                left: 7em;
+                                border-radius: 7.5px;
+                                background-color: #FFFFFF;
+                              }
+
+                              #computer:hover {
+                                transform: scale(2.5);  
+                                z-index: 1;
+                                /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+                              }
+
+                             #computer {
+                              transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+                              display: flex;
+                              width: 140px;
+                              height: 115px;
+                              position: relative;
+                              border-left: 2em solid transparent;
+                              border-radius: 8px;
+                              box-shadow: inset 0px 0px 1px 1px rgba(64, 64, 64, 0.1);
+                              transform-origin: 50% 50%;
+                              transform: scale(1.03);
+                              transition: transform 0.2s;
+                              background-color: transparent;
+                              border-radius: 20px;
+                              border: 13px solid;
+                              border-bottom-color: #222222;
+                              border-left-color: #050505;
+                              border-right-color: #050505;
+                              border-top-color: #111111;
+                              box-shadow: inset 0 0 2rem #020202, inset 0 0 1rem black, 0 0 2rem black;
+                              }
+                              #computer_base{
+                                content: "";
+                                position: absolute;
+                                border-bottom: 19px solid #222222;
+                                border-left: 7px solid transparent;
+                                border-right: 9px solid transparent;
+                                height: 0px;
+                                top: 11em;
+                                left: 1.4em;
+                                z-index: -1;
+                                width: 100px;
+                              }
+                                .contact_element{
+                                text-decoration: underline;
+                                color: $negro;
+                                display: flex;
+                                cursor: url(https://cur.cursors-4u.net/others/oth-3/oth202.cur), auto !important;
+                                flex-direction: row;
+                                align-items: center;
+                                }
+                                
+
+
+                                .contact_section {
+                                    display: flex;
+                                     flex-direction: column;
+                                     gap:0;
+                                     border: 3px solid;
+                                    button {
+                                    top:0.5em;
+                                    position: relative;
+                                    margin: 0;
+                                    background: #222222;
+                                    border-radius: 0px;
+                                     text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
+                                      0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092;
+                                    color: #fccaff; 
+                                    font-family: 'Barrio', sans-serif;
+                                    text-align: center;
+                                    animation: blink 12s infinite;
+                                    -webkit-animation: blink 12s infinite;
+
+                                    
+                                    
+                                    text-transform: uppercase;
+                                    color: $negro-claro;
+                                    
+                                    border: none;
+                                    box-shadow: 1px 1px 10px rgba(50,50,50,.4);
+                                    transition: .3s all ease;
+                                    letter-spacing: .1rem;
+                                    font-size: 7px;
+                                    position: relative;
+                                    top: 0;
+                                    right: 0;
+                                    
+                                    
+                                    &:after,
+                                    &:before {
+                                      position: absolute;
+                                      font-family: 'Barrio', sans-serif;
+                                      font-weight: bold;
+                                      font-size: 1rem;
+                                      color: darken($Terminal, 20%);
+                                      transition: .3s all ease;
+                                    }
+                                    
+                                    &:before {
+                                      content: '_';
+                                      position: absolute;
+                                      left: 1.4rem;
+                                      top: 0rem;
+                                    }
+                                    
+                                    &:after {
+                                      content: '>';
+                                      position: absolute;
+                                      left: .8rem;
+                                      top: 0rem;
+                                    }
+                                    
+                                    &:hover {
+                                      box-shadow: 1px 1px 20px rgba(150,150,150,.2);
+                                      top: -.1rem;
+                                      right: -.1rem;
+                                      cursor: pointer;
+                                      
+                                      
+                                      &:before {
+                                        content: '_';
+                                        position: absolute;
+                                        left: .8rem;
+                                        top: -1px;
+                                        transform: translateY(-1px);
+                                      }
+                                    
+                                      &:after {
+                                        content: '>';
+                                        position: absolute;
+                                        left: 1.1rem;
+                                        top: 5px;
+                                      }
+                                    }
+                                  }
+                                }
+                        }
+                        .about_area { 
+                            grid-area: about_area; 
+
+                            .about_area_title{
+                                font-size: medium;
+                                //font-family: Ubuntu-Medium;
+                                font-family: "Pixelated MS Sans Serif", Ubuntu-Medium;
+                            }
+                            .about_area_info{
+                                text-align: justify;
+                                font-family: "Pixelated MS Sans Serif", Ubuntu-Regular;
+                            }
+                            .about_area_tags{
+                              font-family: "Pixelated MS Sans Serif", Ubuntu-Regular;
+                                .about_area_tags_json{
+                                    width: 30px;
+                                    height: 30px;
+                                    position: relative;
+                                    left: -8px;
+                                }
+                            }
+                        }
+                }
+                
+                .admindevices_section{
+
+                  display: flex;
+                  flex-wrap: wrap;
+                  flex-direction: row;
+                  justify-content: center;
+                  gap: 0px;
+                  height: auto !important;
+                  align-content: center;
+                  a{
+                    text-decoration: none;
+                    color:$blanco;
+                    font-family: "Pixelated MS Sans Serif", Ubuntu-Regular;
+                  }
+                  .card {
+                    width: var(--card-width);
+                    height: var(--card-height);
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: flex-end;
+                    padding: 0 36px;
+                    perspective: 2500px;
+                    margin: 0 10px;
+                    border-radius: 6px;
+                  }
+                  
+                  .cover-video {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 6px;
+                  }
+                  
+                  .wrapper {
+                    transition: all 0.5s;
+                    position: absolute;
+                    width: 100%;
+                    z-index: -1;
+                  }
+                  
+                  .card:hover .wrapper {
+                    transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+                    box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+                    -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+                    -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+                    border-radius: 6px;
+                  }
+                  .devices_text_count{
+                    .devices_text_number{
+                      font-size: large;
+                      position: relative;
+                      left: 1em;
+                    }
+                    .black{
+                      color: $negro-claro;
+                    }
+                  }
+                  .wrapper::before,
+                  .wrapper::after {
+                    content: "";
+                    opacity: 0;
+                    width: 100%;
+                    height: 80px;
+                    transition: all 0.5s;
+                    position: absolute;
+                    left: 0;
+                    border-radius: 6px;
+                  }
+                  .wrapper::before {
+                    top: 0;
+                    height: 100%;
+                    background-image: linear-gradient(
+                      to top,
+                      transparent 46%,
+                      rgba(12, 13, 19, 0.5) 68%,
+                      rgba(12, 13, 19) 97%
+                    );
+                  }
+                  .wrapper::after {
+                    bottom: 0;
+                    opacity: 1;
+                    background-image: linear-gradient(
+                      to bottom,
+                      transparent 46%,
+                      rgba(12, 13, 19, 0.5) 68%,
+                      rgba(12, 13, 19) 97%
+                    );
+                  }
+                  
+                  .card:hover .wrapper::before,
+                  .wrapper::after {
+                    opacity: 1;
+                    border-radius: 6px;
+                  }
+                  
+                  .card:hover .wrapper::after {
+                    height: 120px;
+                  }
+                  .title {
+                    width: 100%;
+                    transition: transform 0.5s;
+                    text-decoration: none !important;
+                  }
+                  .card:hover .title,
+                  .card:hover .devices_text_number {
+                    opacity: 0;
+                    transition: 0.5s;
+                  }
+                  
+                  .character {
+                    width: 100%;
+                    opacity: 0;
+                    transition: all 0.5s;
+                    position: absolute;
+                    z-index: -1;
+                  }
+                  
+                  .card:hover .character {
+                    opacity: 1;
+                    transform: translate3d(0%, -30%, 100px);
+                  }
+                  
+                }
+
+                .technician_skills{
+
+                  font-family: "Pixelated MS Sans Serif", Ubuntu-Regular;
+                  .hidden::before{
+                    opacity: 0;
+                  }
+                  .description p { 
+                    margin: 0;
+                    font-size: 12px;
+                    z-index: -1;
+                    color: $negro;
+                }
+                
+                .image-indicators img {
+                    width: 100%;
+                    border-radius: 10px;
+                    transition: width 0.4s ease, transform 0.4s ease;
+                }
+                
+                .image-indicators {
+                    position: relative;
+                    width: 400px;
+                    border-radius: 10px;
+                    overflow: hidden;
+                    font-size: 0;
+                    margin: auto;
+                }
+                
+                .image-indicators label {
+                    display: flex;
+                    position: absolute;
+                    cursor: pointer;
+                    transition-property: opacity;
+                    transition-duration: 300ms;
+                    transition: opacity 0.3s ease-out .5s;
+                    z-index: 1;
+                }
+                
+                .image-indicators>label>span {
+                    background-color: #2196f3;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 60px;
+                    transform: scale(1);
+                }
+                
+                .image-indicators>label>span>span {
+                    display: inline-block;
+                    vertical-align: 20px;
+                    background-color: rgba(33, 150, 243, 1);
+                    width: 10px;
+                    height: 10px;
+                    transform: scale(0);
+                    border-radius: 60px;
+                    animation: scaleGrow 3s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+                    animation-play-state: running;
+                }
+                
+                @keyframes scaleGrow {
+                    from {
+                        transform: scale(0);
+                        background-color: rgba(33, 150, 243, 1);
+                    }
+                    to {
+                        transform: scale(3);
+                        opacity: 0;
+                        
+                    }
+                }
+                
+                @keyframes scaleDecreases {
+                    from {
+                        transform: scale(1);
+                    }
+                
+                    50% {
+                        transform: scale(0.9);
+                    }
+                
+                    to {
+                        transform: scale(1);
+                    }
+                }
+                
+                .point {
+                    position: absolute;
+                    width: 10px;
+                    height: 10px;
+                    cursor: pointer;
+                    opacity: 0;
+                    z-index: 2;
+                    transition-property: width, height, left, top;
+                    transition-delay: 650ms;
+                }
+                
+                .point:checked {
+                    top: -50% !important;
+                    left: -50% !important;
+                    width: 200%;
+                    height: 200%;
+                    z-index: 9;
+                }
+                
+                .point:checked ~ label {
+                    opacity: 0;
+                    pointer-events: none;
+                    z-index: -1;
+                    transition: opacity 0.3s ease-out 0s;
+                } 
+                
+                
+                .description {
+                    position: relative;
+                    height: 45px;
+                    overflow: hidden;
+                    border-radius: 10px;
+                    padding: 10px 20px;
+                    margin: 1px 10px 10px;
+                    color: black;
+                    z-index: 1;
+                }
+                
+                .description div {
+                    display: none;
+                }
+                
+                .description div:first-child {
+                    display: block;
+                    opacity: 1;
+                    transition-property: opacity;
+                    transition-duration: 300ms;
+                    transition: opacity 0.3s ease-out .5s;
+                }
+                
+                .description div:first-child p {
+                    color: #000000;
+                }
+                
+                .description p {
+                    line-height: 18px;
+                }
+                
+                .point:checked ~ .description {
+                    background: rgb(191 191 191 / 30%);
+                    backdrop-filter: blur( 15px );
+                    -webkit-backdrop-filter: blur( 15.0px );
+                    border: 1px solid rgba( 255, 255, 255, 0.18 );
+                }
+                
+                @for $i from 1 through 4 {
+                    $value: $i + 1;
+                
+                    #label-#{$i} {
+                        top: var(--point-#{$i}-top);
+                        left: var(--point-#{$i}-left);
+                    }
+                    
+                    #point-#{$i} {
+                        left:var(--point-#{$i}-left);
+                        top: var(--point-#{$i}-top);
+                    }
+                
+                    #point-#{$i}:checked ~ img {
+                        transform-origin: calc(var(--point-#{$i}-left)) calc(var(--point-#{$i}-top));
+                        transform: scale(var(--point-#{$i}-scale));
+                    }
+                    
+                    #point-#{$i}:hover ~ img {
+                        transform-origin: calc(var(--point-#{$i}-left)) calc(var(--point-#{$i}-top));
+                    }
+                
+                    #point-#{$i}:checked ~ .description div:first-child {
+                        height: 0;
+                        opacity: 0;
+                        transition: opacity 0s ease-out 0s;
+                    }
+                    #point-#{$i}:checked ~ .description div:nth-child(#{$value}) {
+                        display: block;
+                    }
+                    
+                    #point-#{$i}:checked ~ .description div:nth-child(#{$value}) p:first-child {
+                        width: 0;
+                        opacity: 0;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        -webkit-animation: type2 2s steps(40, end);
+                        animation: type2 2s steps(40, end);
+                        -webkit-animation-fill-mode: forwards;
+                        animation-fill-mode: forwards;
+                        animation-play-state: paused;
+                        -webkit-animation-delay: .5s;
+                        animation-delay: .5s;
+                        animation-play-state: running;
+                    }
+                    
+                    #point-#{$i}:checked ~ .description div:nth-child(#{$value}) p:nth-child(2) {
+                        width: 0;
+                        opacity: 0;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        -webkit-animation: type2 2s steps(40, end);
+                        animation: type2 2s steps(40, end);
+                        -webkit-animation-fill-mode: forwards;
+                        animation-fill-mode: forwards;
+                        animation-play-state: paused;
+                        -webkit-animation-delay: 2.5s;
+                        animation-delay: 2.5s;
+                        animation-play-state: running;
+                    }
+                }
+                
+                @-webkit-keyframes type2 {
+                  0% {
+                    width: 0;
+                  }
+                  1% {
+                    opacity: 1;
+                  }
+                  100% {
+                    opacity: 1;
+                    width: 100%;
+                    border: none;
+                  }
+                }
+                }
+                .proyections_section{
+                  display: flex;
+                  justify-content: center;
+                  flex-direction: row;
+                  align-items: center;
+                  padding: 1em;
+                  gap:1em;
+                  img{
+                    width: 50%;
+                    height: 50%;
+                    object-fit: cover;
+                    border-radius: 8px;
+                  }
+                  .holder {
+                    background: #f0efe9;
+                    //min-height: 100vh;
+                  }
+                  .card-body.p-5 > .form-check.mb-3{
+                    padding: 1em;
+                  }
+                  .rounded {
+                    border-radius: 1rem !important;
+                  }
+                  
+                  .text-gray {
+                    color: #aaa;
+                  }
+                  
+                  input:checked + label {
+                    text-decoration: line-through;
+                    color: #adb5bd;
+                  }
+                  
+                  label {
+                    cursor: pointer;
+                  }
+                  
+                  a {
+                    text-decoration: none;
+                  }
+                }
+                
+            }
+
+        }
+
+    }
+
+    
+}
+
