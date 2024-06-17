@@ -1,0 +1,23 @@
+@use "../utils" as *;
+
+.hover_underline {
+  color: $negro-claro;
+  position: relative;
+  text-decoration: none;
+}
+
+.hover_underline::before {
+  background: $amarillo-oscuro;
+  content: "";
+  inset: 0;
+  position: absolute;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s ease-in-out;
+  z-index: -1;
+}
+
+.hover_underline:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
