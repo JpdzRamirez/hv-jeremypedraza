@@ -2,11 +2,14 @@
 import { ref } from 'vue';
 
 import ChildWindowComponent from './2d-Level-Component/WindowContainer.vue';
+import TaskBarComponent from './1rst-Level-Component/TaskBarComponent.vue';
 
 export default {
   name: 'FirstComponent',
   components: {
-    ChildWindowComponent
+    ChildWindowComponent,
+    TaskBarComponent
+
   }
 }
 
@@ -18,6 +21,7 @@ const count = ref(0)
  
   <div>
     <ChildWindowComponent />
-    <button type="button" class="btn btn-primary">Primary  <i class="bi bi-usb-symbol"></i> </button>
-</div>
+    <TaskBarComponent />
+    
+  </div>
 </template>

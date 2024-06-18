@@ -2,12 +2,13 @@
 import {
     ref
 } from 'vue'
-import CertificationsCard from './window-components/CertificationsCard.vue';
 
 import HeaderComponent from './window-components/HeaderWindow.vue';
-import LeftNavBarComponent from './window-components/LeftNavBarWindow.vue';
-import FooterWindowComponent from './window-components/FooterWindow.vue';
 import HeaderNavBarComponent from './window-components/HeaderNavBarWindow.vue'; 
+import LeftNavBarComponent from './window-components/LeftNavBarWindow.vue';
+import CertificationCardComponent from './window-components/CertificationsCard.vue'; 
+import FooterWindowComponent from './window-components/FooterWindow.vue';
+
 
 
 
@@ -16,14 +17,23 @@ import WindowContainerEffects from './window-components/window';
 // Add Jquery functions
 import $ from 'jquery';
 
+
+
 export default {
     name: 'ChildWindowComponent',
     components: {
     HeaderComponent,
     LeftNavBarComponent,
     FooterWindowComponent,
-    HeaderNavBarComponent
+    HeaderNavBarComponent,
+    CertificationCardComponent,
+    
   },
+  data: function () {
+        return {
+            styleCard: 'dark'
+        }
+    },
     mounted: function () {
 
         const dropdowns = document.querySelectorAll(".dropdown");
@@ -67,53 +77,32 @@ export default {
             }
         });
 
-        $(function () {
-            $(".dropdown").on("click", function (e) {
-                $(".content-wrapper").addClass("overlay");
-                e.stopPropagation();
-            });
-            $(document).on("click", function (e) {
-                if ($(e.target).is(".dropdown") === false) {
-                    $(".content-wrapper").removeClass("overlay");
-                }
-            });
-        });
-
-        $(function () {
-            $(".status-button:not(.open)").on("click", function (e) {
-                $(".overlay-app").addClass("is-active");
-            });
-            $(".pop-up .close").click(function () {
-                $(".overlay-app").removeClass("is-active");
-            });
-        });
-
-        $(".status-button:not(.open)").click(function () {
-            $(".pop-up").addClass("visible");
-        });
-
-        $(".pop-up .close").click(function () {
-            $(".pop-up").removeClass("visible");
-        });
-
-        
 
     },
     methods: {
     turnOnLigths() {
         const toggleButton = document.querySelector('.dark-light');
+        let card= $(".card  div");
+        card.each( function(){
+            $( this ).toggleClass( "offLigths" );;
+        });
+        if(this.styleCard == "dark"){
+            this.styleCard = "light";
+        }else{
+            this.styleCard = "dark";
+        }
         WindowContainerEffects.darkMode(toggleButton); // <---read data
     },
+
   }
 }
 </script>
 
 <template>
 
-<div class="video-bg">
+    <div class="video-bg">
         <!-- <iframe  width="420" height="315" src="https://www.youtube.com/embed/gFRtAAmiFbE?autoplay=1&cc_load_policy=1&controls=0&mute=1&loop=1" frameborder="0"
-allowfullscreen></iframe> -->
-        
+        allowfullscreen></iframe> -->
     </div>
     
     <div @click="turnOnLigths" class="dark-light">
@@ -145,7 +134,7 @@ allowfullscreen></iframe> -->
                         </div>
                         <img class="content-wrapper-img" src="https://assets.codepen.io/3364143/glass.png" alt="">
                     </div>
-                    
+                    <CertificationCardComponent :styleCard="styleCard"></CertificationCardComponent>
                     <!-- Footer Content Section -->
                      <FooterWindowComponent></FooterWindowComponent>
                 </div>

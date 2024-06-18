@@ -9,7 +9,7 @@ export default {
 </script>
 
 <template>
-        <div class="header-title">
+                <div class="header-title">
                     <div class="header__input-menu">
                         <a href="" class="header__input-close"></a>
                         <a href="" class="header__input-full-screen"></a>
@@ -21,7 +21,7 @@ export default {
                 </div>
 
                 <div class="header">
-                    <div class="mb-3 px-4 mt-4" >
+                    <div class="mb-3 px-4 mt-4 image-header" >
                         <img src="/src/assets/img/jpdzSoftwareLogo.png">
                     </div>
                     <div class="header-menu">

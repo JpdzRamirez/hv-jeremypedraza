@@ -2,44 +2,9 @@
 
 
 
-.light-mode {
-    --theme-bg-color: rgb(255 255 255 / 31%);
-   --theme-color: #3c3a3a;
-   --inactive-color: #333333;
-    --button-inactive: #3c3a3a;
-   --search-bg: rgb(255 255 255 / 31%);
-   --dropdown-bg: #f7f7f7;
-   --overlay-bg: rgb(255 255 255 / 30%);
-   --dropdown-hover: rgb(236 236 236);
-   --border-color: rgb(255 255 255 / 35%);
-   --popup-bg: rgb(255 255 255);
-   --hover-menu-bg: rgba(255 255 255 / 35%);
-   --scrollbar-bg: rgb(255 253 253 / 57%);
-   --content-title-color: --theme-color;
-  }
+
   
-  html {
-   box-sizing: border-box;
-   -webkit-font-smoothing: antialiased;
-  }
-  
-  body {
-   font-family: var(--body-font);
-   background-image: url(https://wallpapershome.com/images/wallpapers/macos-big-sur-1280x720-dark-wwdc-2020-22655.jpg);
-   background-size: cover;
-   background-position: center;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-direction: column;
-   padding: 2em;
-   width: 100%;
-   height: 100vh;
-   @media screen and (max-width: 480px) {
-    padding: 0.8em;
-   }
-  }
-  
+
   .video-bg {
    position: fixed;
    right: 0;
@@ -110,8 +75,10 @@
   
   .app {
    background-color: var(--theme-bg-color);
+   left: 2em;
    max-width: 1250px;
    max-height: 860px;
+  //  margin-bottom: 1em;
    height: 90vh;
    display: flex;
    flex-direction: column;
@@ -124,130 +91,8 @@
    font-size: 15px;
    font-weight: 500;
 
-   .header-title{
-    
-    display: flex;
-    position: relative;
-    align-items: center;
-    width: 100%;
-    height: 35px;
-    background: $blanco; /* Old browsers */
-    background: -moz-linear-gradient(top,  #f6f6f6 0%, #dadada 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f6f6f6), color-stop(100%,#dadada)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  #f6f6f6 0%,#dadada 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  #f6f6f6 0%,#dadada 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  #f6f6f6 0%,#dadada 100%); /* IE10+ */
-    background: linear-gradient(to bottom,  #f6f6f6 0%,#dadada 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', endColorstr='#dadada',GradientType=0 ); /* IE6-9 */
-    border: 1px solid #d8d8d8;
-    border-bottom: 1px solid #b4b4b4;
   }
   
-.header__text{
-  display: flex;
-  margin: auto;
-  align-items: center;
-  height: 35px;
-}
-
-.header__input-menu{
-  display: inherit;
-  position: absolute;
-  align-items: center;
-  height: 35px;
-  
-}
-
-.header__input-menu a{
-  border-radius: 50%;
-  width: 15px;
-  height: 15px;
-  margin-left: 10px;
-}
-
-.header__input-close{
-  background-color: $rojoBoton;
-}
-.header__input-close:hover{
-  background: url("src/assets/img/svg/close.svg");
-  background-size: 100%, 100%;
-  transition: 0.3s ease;
-  transform: scale(1.5);
-}
-
-.header__input-full-screen{
-  background-color: $verdeBoton;
-  transition: 0.3s ease;
-}
-.header__input-full-screen:hover{
-  background: url("src/assets/img/svg/resize-full.svg");
-  background-size: 100%, 100%;
-  transition: 0.3s ease;
-  transform: scale(1.5);
-}
-
-.header__input-minimize{
-  background-color: $amarilloBoton;
-}
-.header__input-minimize:hover{
-  background: url("src/assets/img/svg/minimize.svg");
-  background-size: 100%, 100%;
-  transition: 0.3s ease;
-  transform: scale(1.5);
-}
-  }
-  
-  .header {
-   display: flex;
-   align-items: center;
-   flex-shrink: 0;
-   height: 58px;
-   width: 100%;
-   border-bottom: 1px solid var(--border-color);
-   padding: 0 30px;
-   white-space: nowrap;
-   @media screen and (max-width: 480px) {
-    padding: 0 16px;
-   }
-   &-menu {
-    display: flex;
-    align-items: center;
-    a {
-     padding: 20px 30px;
-     text-decoration: none;
-     color: var(--inactive-color);
-     border-bottom: 2px solid transparent;
-     transition: 0.3s;
-     @media screen and (max-width: 610px) {
-      &:not(.main-header-link) {
-       display: none;
-      }
-     }
-     &.is-active,
-     &:hover {
-      color: var(--theme-color);
-      border-bottom: 2px solid var(--theme-color);
-     }
-    }
-   }
-  }
-  
-  .notify {
-   position: relative;
-   &:before {
-    content: "";
-    position: absolute;
-    background-color: $azul;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    right: 20px;
-    top: 16px;
-   }
-   @media screen and (max-width: 1055px) {
-    display: none;
-   }
-  }
   
   .menu-circle {
    width: 15px;

@@ -7,10 +7,10 @@ button{
 
 
 button {
-    background-color: #FFFFFF;
-    border: 1px solid rgb(209,213,219);
+    background-color: $beige;
+    border: 1px solid $gris;
     border-radius: .5rem;
-    color: #111827;
+    color: $negro;
     font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
     font-size: .875rem;
     font-weight: 600;
@@ -29,11 +29,11 @@ button {
   }
   
   button:hover {
-    background-color: #f9fafb;
+    background-color: $blanco;
   }
   
   button:focus {
-    outline: 2px solid rgba(0,0,0,0.1);
+    outline: 2px solid $negro-claro;
     outline-offset: 2px;
   }
   

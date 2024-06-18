@@ -1,0 +1,16 @@
+@use "../utils" as *;
+
+  .card{
+    .offLigths{
+      background-color: $negro !important;
+      color: $blanco !important;
+    }
+    
+    .onLigths {
+      background-color: $negro !important;
+      color: $blanco !important;
+    }
+  }
+
+
+
