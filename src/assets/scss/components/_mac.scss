@@ -71,8 +71,8 @@
    svg {
     width: 24px;
     flex-shrink: 0;
-    fill: #ffce45;
-    stroke: #ffce45;
+    fill: $amarillo-oscuro;
+    stroke: $amarillo-oscuro;
     transition: 0.5s;
    }
   }
@@ -92,7 +92,7 @@
     border-color: var(--theme-color);
    }
    .dropdown.is-active ul {
-    background-color:rgb(255 255 255 / 94%);
+    background-color:$blanco;
    }
   }
   
@@ -104,7 +104,7 @@
       top: 0;
       width: 100%;
       height: 100vh;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.72) 0%, rgb(255 255 255 / 45%) 100%);
+      background: linear-gradient(180deg, $beige 0%, $gris 100%);
       backdrop-filter: saturate(3);
   }
   
@@ -131,7 +131,7 @@
     align-items: center;
     width: 100%;
     height: 35px;
-    background: #f6f6f6; /* Old browsers */
+    background: $blanco; /* Old browsers */
     background: -moz-linear-gradient(top,  #f6f6f6 0%, #dadada 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f6f6f6), color-stop(100%,#dadada)); /* Chrome,Safari4+ */
     background: -webkit-linear-gradient(top,  #f6f6f6 0%,#dadada 100%); /* Chrome10+,Safari5.1+ */
@@ -237,7 +237,7 @@
    &:before {
     content: "";
     position: absolute;
-    background-color: #3a6df0;
+    background-color: $azul;
     width: 6px;
     height: 6px;
     border-radius: 50%;
@@ -252,9 +252,9 @@
   .menu-circle {
    width: 15px;
    height: 15px;
-   background-color: #f96057;
+   background-color: $rojoBoton;
    border-radius: 50%;
-   box-shadow: 24px 0 0 0 #f8ce52, 48px 0 0 0 #5fcf65;
+   box-shadow: 24px 0 0 0 $amarilloBoton, 48px 0 0 0 $verdeBoton;
    margin-right: 195px;
    flex-shrink: 0;
    @media screen and (max-width: 945px) {
@@ -304,7 +304,7 @@
    flex-shrink: 0;
    svg {
     width: 22px;
-    color: #f9fafb;
+    color: $blanco;
     flex-shrink: 0;
    }
   }
@@ -313,7 +313,7 @@
    position: relative;
    &-number {
     position: absolute;
-    background-color: #3a6df0;
+    background-color: $azul;
     width: 16px;
     height: 16px;
     border-radius: 50%;
@@ -321,7 +321,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
+    color: $blanco;
     right: -6px;
     top: -6px;
    }
@@ -530,7 +530,7 @@
    font-size: 14px;
    margin-top: 16px;
    line-height: 1.7em;
-   color: #ebecec;
+   color: $blanco;
    display: -webkit-box;
    -webkit-line-clamp: 4;
    -webkit-box-orient: vertical;
@@ -543,10 +543,10 @@
   }
   
   .content-button {
-   background-color: #3a6df0;
+   background-color: $azul;
    border: none;
    padding: 8px 26px;
-   color: #fff;
+   color: $blanco;
    border-radius: 20px;
    margin-top: 16px;
    cursor: pointer;
@@ -635,13 +635,13 @@
    &-circle {
     width: 6px;
     height: 6px;
-    background-color: #396df0;
+    background-color: $azul;
     position: absolute;
     border-radius: 50%;
     top: 4px;
     left: -20px;
     &.green {
-     background-color: #3bf083;
+     background-color: $Terminal;
     }
    }
    &-button {
@@ -657,14 +657,14 @@
      border: 1px solid var(--button-inactive);
     }
     &:not(.open):hover {
-     color: #fff;
-     border-color: #fff;
+     color: $blanco;
+     border-color: $blanco;
     }
    }
   }
   
   .content-button:not(.open):hover {
-   background: #1e59f1;
+   background: $azul;
   }
   
   .menu {
@@ -733,7 +733,7 @@
    }
   }
   
-  .pop_mode {
+  .pop-mode {
    position: absolute;
    padding: 30px 40px;
    top: 50%;
@@ -816,8 +816,8 @@
   }
   
   .checkbox:checked + label:before {
-   background-color: #3a6df0;
-   border-color: #3a6df0;
+   background-color: $azul;
+   border-color: $azul;
    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' class='feather feather-check'%3e%3cpath d='M20 6L9 17l-5-5'/%3e%3c/svg%3e");
    background-position: 50%;
    background-size: 12px;

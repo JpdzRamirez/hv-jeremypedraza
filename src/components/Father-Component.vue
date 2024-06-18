@@ -1,8 +1,14 @@
-<script setup>
+<script >
 import { ref } from 'vue';
 
-import WindowContainer from './2d-Level-Component/WindowContainer.vue';
+import ChildWindowComponent from './2d-Level-Component/WindowContainer.vue';
 
+export default {
+  name: 'FirstComponent',
+  components: {
+    ChildWindowComponent
+  }
+}
 
 
 const count = ref(0)
@@ -11,7 +17,7 @@ const count = ref(0)
 <template>
  
   <div>
-    <WindowContainer />
+    <ChildWindowComponent />
     <button type="button" class="btn btn-primary">Primary  <i class="bi bi-usb-symbol"></i> </button>
 </div>
 </template>
