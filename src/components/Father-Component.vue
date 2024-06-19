@@ -19,7 +19,7 @@ const count = ref(0)
 
 <template>
  
-  <div>
+  <div class="d-flex flex-column justify-content-center align-items-center">
     <ChildWindowComponent />
     <TaskBarComponent />
     
