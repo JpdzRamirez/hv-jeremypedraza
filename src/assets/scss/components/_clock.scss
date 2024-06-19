@@ -2,25 +2,44 @@
 
 
 
-.taskBar-Footer{
+.taskBarFooter{
 
     width: 320px;
-    
+    &.dark{
+        color: $blanco;
+    }
+    &.ligth{
+        color: $negro;
+    }
     .clock-container{
         position: relative;
         display: flex;
         flex-direction: row;
+        
+        height: fit-content;
+        .otherIcons{
+            display: flex;
+            flex-direction: row;
+            gap: 1em;
+            width: 13em;
+            .battery{
+                display: flex;
+                flex-direction: row;
+                gap: 0.5em;
+                align-items: center;
+                width: 5em;
+                img{
+                    width: 1.5em;
+                }
+            }
+        }
         .clock {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             height: auto;
-            width: 8em;
-            background-color: rgba(255, 255, 255, 0.06);
-            -webkit-backdrop-filter: blur(15px);
-            backdrop-filter: blur(15px);
-            padding: 1em;
-            -webkit-box-shadow: 0 25px 23px rgba(0, 0, 0, 0.15);
-            box-shadow: 0 25px 23px rgba(0, 0, 0, 0.15);
-            border: 1.5px solid rgba(255, 255, 255, 0.06);
-            border-radius: 8px;
+            width: 8em;     
+            padding: 0em;
         }
         
         .shape1 {
@@ -33,37 +52,27 @@
             right: 0;
             z-index: -1;
         }
-        .shape2 {
-            height: 1em;
-            width: 1em;
-            position: absolute;
-            background: -o-linear-gradient(315deg, #426cf8, #3ebdf0);
-            background: linear-gradient(135deg, #426cf8, #3ebdf0);
-            border-radius: 50%;
-            
-            z-index: -1;
-        }
         
         .wrapper {
             text-align: center;
         }
         #time {
-            font-size: 1em;
-            color: $blanco;
+            font-size: 10px;
+            
             display: inline-block;
         }
         #day {
             position: relative;
-            font-size: 16px;
+            font-size: 10px;
             letter-spacing: 2px;
             text-transform: uppercase;
-            color: $blanco;
+            
             text-align: center;
         }
         #midday {
             display: inline-block;
-            color: $blanco;
-            font-size: 1em;
+            
+            font-size: 10px;
         }
         
     }   

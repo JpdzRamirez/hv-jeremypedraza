@@ -10,7 +10,8 @@ export default {
     ChildWindowComponent,
     TaskBarComponent
 
-  }
+  },
+
 }
 
 
@@ -22,6 +23,5 @@ const count = ref(0)
   <div class="d-flex flex-column justify-content-center align-items-center">
     <ChildWindowComponent />
     <TaskBarComponent />
-    
   </div>
 </template>
