@@ -40,6 +40,9 @@
     stroke: $amarillo-oscuro;
     transition: 0.5s;
    }
+   img{
+    width: 24px;
+   }
   }
   
   .light-mode {
@@ -61,17 +64,7 @@
    }
   }
   
-  body.light-mode:before,
-  body.light-mode .video-bg:before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100vh;
-      background: linear-gradient(180deg, $beige 0%, $gris 100%);
-      backdrop-filter: saturate(3);
-  }
+
   
   .app {
    background-color: var(--theme-bg-color);

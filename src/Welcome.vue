@@ -3,7 +3,7 @@ import FatherComponent from './components/Father-Component.vue'
 
 
 export default {
-  name: 'ParentComponent',
+  name: 'WelcomeComponent',
   components: {
     FatherComponent
   }

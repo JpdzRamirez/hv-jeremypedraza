@@ -46,6 +46,20 @@ export default {
         1000
       );
 
+  },
+  props: {
+    receivedData: {
+      type: String,
+      required: true
+    }
+  },
+  computed: {
+    statusClass() {
+      return {
+        'table fill-light': this.receivedData === 'dark',
+        'table': this.receivedData === 'light'
+      };
+    }
   }
 }
 </script>
@@ -53,7 +67,7 @@ export default {
 <template>
                 <div class="taskBarFooter dark" id="taskBar-Footer">
                   <div class="windows-container">
-                    <a><img src="/src/assets/img/svg/list-table.svg" class="table fill-light"/></a>
+                    <a><img src="/src/assets/img/svg/list-table.svg" :class="statusClass"/></a>
                     <div class="windows-tab">
                       <a><img src="/src/assets/img/svg/window.svg" class="win-tab fill-light"/> <img src="/src/assets/img/wallpaper.jpg" class="win-img"/></a>
                       <a><img src="/src/assets/img/svg/window.svg" class="win-tab fill-light"/></a>
@@ -82,14 +96,14 @@ export default {
                           :width="320"
                           trigger="click"
                           transition="el-fade-in-linear"
-                          effect="dark"
+                          :effect=receivedData 
                           placement="top"
                           title="Battery"
                         >
                             <template #reference>
-                              <span class="battery">100% <img src="/src/assets/img/svg/battery.svg" /></span>
+                              <span class="battery">100%  <img src="/src/assets/img/svg/battery.svg" /></span>
                             </template>
-                            <p>Power Source: Power Adapter</p>
+                            <p>Power Source: Power Adapter </p>
                             <span class=""><hr>Battery Preferences...</span>
                         </el-popover>
                         

@@ -20,7 +20,7 @@ import $ from 'jquery';
 
 
 export default {
-    name: 'ChildWindowComponent',
+    name: 'WindowComponent',
     components: {
     HeaderComponent,
     LeftNavBarComponent,
@@ -34,6 +34,9 @@ export default {
             styleCard: 'dark'
         }
     },
+    emits :{
+        updatestyleCard: null, 
+        },
     mounted: function () {
 
         const dropdowns = document.querySelectorAll(".dropdown");
@@ -80,7 +83,7 @@ export default {
 
     },
     methods: {
-    turnOnLigths() {
+    turnOnLigths: function() {
         const toggleButton = document.querySelector('.dark-light');
         let card= $(".card  div");
         card.each( function(){
@@ -91,6 +94,7 @@ export default {
         }else{
             this.styleCard = "dark";
         }
+        this.$emit("updatestyleCard",this.styleCard);
         WindowContainerEffects.darkMode(toggleButton); // <---read data
     },
 
@@ -105,8 +109,9 @@ export default {
         allowfullscreen></iframe> -->
     </div>
     
-    <div @click="turnOnLigths" class="dark-light">
-        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <div @click="this.turnOnLigths" class="dark-light">
+        <img v-if="this.styleCard=='light'" src="/src/assets/img/svg/sun.svg" class="imgSVG"/>
+        <svg v-else viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" /></svg>
     </div>
     <div class="app">
