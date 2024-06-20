@@ -9,7 +9,7 @@ export default {
   components: {
     WindowComponent,
     TaskBarComponent
-
+    
   },
    methods:{
     handleUpdateStyleCard(data){

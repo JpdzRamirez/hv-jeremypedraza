@@ -4,7 +4,27 @@
 //import cert1 from "/src/assets/img/card-cert-1.jpg";
 
 export default {
-  name: 'HeaderComponent'
+  name: 'HeaderComponent',
+  props:['sharedVariable'],
+  data() {
+    return{
+        localVariable : this.sharedVariable,
+    };
+  },
+  watch: {
+    sharedVariable(newData){
+        this.localVariable =newData;
+    }
+  },
+  methods:{
+    updateLocalVariable(event){
+        this.$emit('updateSharedVariable',event.target.value);
+    }
+  },
+  emits :{
+    updateSharedVariable: '', 
+        },
+
 }
 </script>
 
@@ -30,8 +50,9 @@ export default {
                         <a class="menu-link" href="#">Discover</a>
                         <a class="menu-link notify" href="#">Market</a>
                     </div>
+                    <h1>{{ sharedVariable  }}</h1>
                     <div class="search-bar">
-                        <input type="text" placeholder="Search">
+                        <input type="text" v-model="localVariable" @input="updateLocalVariable">
                     </div>
                     <div class="header-profile">
                         <div class="notification">

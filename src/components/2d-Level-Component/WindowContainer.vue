@@ -31,7 +31,8 @@ export default {
   },
   data: function () {
         return {
-            styleCard: 'dark'
+            styleCard: 'dark',
+            sharedVariable : 'Initial'
         }
     },
     emits :{
@@ -97,7 +98,9 @@ export default {
         this.$emit("updatestyleCard",this.styleCard);
         WindowContainerEffects.darkMode(toggleButton); // <---read data
     },
-
+    updateVariable(value){
+        this.sharedVariable = value;
+    }
   }
 }
 </script>
@@ -115,7 +118,7 @@ export default {
             <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" /></svg>
     </div>
     <div class="app">
-        <HeaderComponent></HeaderComponent>
+        <HeaderComponent :sharedVariable="sharedVariable" @updateSharedVariable="updateVariable"></HeaderComponent>
         <div class="wrapper">
             <LeftNavBarComponent></LeftNavBarComponent>
             <div class="main-container">
@@ -133,6 +136,8 @@ export default {
                                     <path xmlns="http://www.w3.org/2000/svg" d="M391 361h-30c-8.276 0-15-6.724-15-15V211h45c8.291 0 15-6.709 15-15s-6.709-15-15-15h-45v-45c0-8.291-6.709-15-15-15s-15 6.709-15 15v45h-15c-8.291 0-15 6.709-15 15s6.709 15 15 15h15v135c0 24.814 20.186 45 45 45h30c8.291 0 15-6.709 15-15s-6.709-15-15-15z" fill="#d6355b" data-original="#d72878" />
                                 </svg>
                                 Adobe Stock
+                                <h1>Padre: {{ sharedVariable }}</h1>
+                                <input  v-model="sharedVariable" @input="updateVariable"/>
                             </h3>
                             <div class="content-text">Grab yourself 10 free images from Adobe Stock in a 30-day free trial plan and find perfect image, that will help you with your new project.</div>
                             <button class="content-button">Start free trial</button>
