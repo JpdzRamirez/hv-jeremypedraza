@@ -5,24 +5,24 @@
 
 export default {
   name: 'HeaderComponent',
-  props:['sharedVariable'],
+  props:['sharedSearchVariableChild'],
   data() {
     return{
-        localVariable : this.sharedVariable,
+        localSearchVariable : this.sharedSearchVariableChild,
     };
   },
   watch: {
-    sharedVariable(newData){
-        this.localVariable =newData;
+    sharedSearchVariableChild(newData){
+        this.localSearchVariable =newData;
     }
   },
   methods:{
-    updateLocalVariable(event){
-        this.$emit('updateSharedVariable',event.target.value);
+    updateLocalSearchVariable(data){
+        this.$emit('updateSearchVariable',data);
     }
   },
   emits :{
-    updateSharedVariable: '', 
+    updateSearchVariable: '', 
         },
 
 }
@@ -50,9 +50,8 @@ export default {
                         <a class="menu-link" href="#">Discover</a>
                         <a class="menu-link notify" href="#">Market</a>
                     </div>
-                    <h1>{{ sharedVariable  }}</h1>
                     <div class="search-bar">
-                        <input type="text" v-model="localVariable" @input="updateLocalVariable">
+                        <input type="text" placeholder='Search' v-model="localSearchVariable" @input="updateLocalSearchVariable">
                     </div>
                     <div class="header-profile">
                         <div class="notification">
